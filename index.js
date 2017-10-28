@@ -20,13 +20,13 @@ function ZongJi(dsn, options) {
 
   // one connection to send table info query
   // Check first argument against possible connection objects
-  for(var i = 0; i < alternateDsn.length; i++) {
-    if(dsn instanceof alternateDsn[i].type) {
+  // for(var i = 0; i < alternateDsn.length; i++) {
+    // if(dsn instanceof alternateDsn[i].type) {
       this.ctrlConnection = dsn;
       this.ctrlConnectionOwner = false;
-      binlogDsn = cloneObjectSimple(alternateDsn[i].config(dsn));
-    }
-  }
+      binlogDsn = cloneObjectSimple(alternateDsn[1].config(dsn));
+    // }
+  // }
 
   if(!binlogDsn) {
     // assuming that the object passed is the connection settings

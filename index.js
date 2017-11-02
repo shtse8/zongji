@@ -111,6 +111,8 @@ ZongJi.prototype._init = function() {
     // Run asynchronously from _init(), as serverId option set in start()
     if(self.options.serverId !== undefined){
       binlogOptions.serverId = self.options.serverId;
+    } else {
+      binlogOptions.serverId = Math.floor(Math.random() * 100) + 10;
     }
 
     if(('binlogName' in self.options) && ('binlogNextPos' in self.options)) {

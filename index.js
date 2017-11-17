@@ -8,7 +8,7 @@ var generateBinlog = require('./lib/sequence/binlog');
 
 var alternateDsn = [
   { type: Connection, config: function(obj) { return obj.config; } },
-  { type: Pool, config: function(obj) { return obj.config.connectionConfig; } }
+  { type: Pool, config: function(obj) { return obj.pool.config.connectionConfig; } }
 ];
 
 function ZongJi(dsn, options) {
